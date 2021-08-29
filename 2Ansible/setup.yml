@@ -1,0 +1,23 @@
+- name: "initial setup of the server"
+  hosts: all
+  gather_facts: no
+  roles:
+    - initial_setup
+  tags:
+    - initial_setup
+
+- name: "DB Setup"
+  hosts: all
+  gather_facts: no
+  roles:
+    - db_setup
+  tags:
+    - db_setup
+
+- name: "API Deployment"
+  hosts: all
+  gather_facts: no
+  roles:
+    - api_deployment
+  tags:
+    - api_deployment

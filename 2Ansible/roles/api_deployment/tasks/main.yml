@@ -1,0 +1,10 @@
+---
+- name: Start API Service
+  block:
+    - name: Start API Service
+      docker_container:
+        name: api_service
+        image: https://registry.wiredcraft.cn/wcl/api:latest
+        state: present
+        exposed_ports:
+          - 3000

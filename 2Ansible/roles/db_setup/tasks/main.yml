@@ -1,0 +1,13 @@
+---
+- name: Install Mysql
+  block:
+    - name: Install mysql
+      yum:
+        name:
+          - mysql
+        state: present
+
+    - name: Start service nginx, if not started
+      ansible.builtin.service:
+        name: mysql
+        state: started
